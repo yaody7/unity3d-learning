@@ -22,13 +22,13 @@
 
 **资源的目录组织结构：**
 
-​										![1567774448491](C:\Users\89481\AppData\Roaming\Typora\typora-user-images\1567774448491.png)
+​										![1567774448491](https://github.com/yaody7/unity3d-learning/blob/master/HW2/pics/1567774448491.png)
 
 ​	建立不同的文件夹，对不同的资源进行分类。简单的有Material、Scenes、Scirpt三类。
 
 **游戏对象树的层级结构：**
 
-​										![1567774601876](C:\Users\89481\AppData\Roaming\Typora\typora-user-images\1567774601876.png)             
+​										![1567774601876](https://github.com/yaody7/unity3d-learning/blob/master/HW2/pics/1567774601876.png)             
 
 ​	子游戏对象存在于父游戏对象之下。比如table有4个子游戏对象。四个chair就会跟着table移动。
 
@@ -38,9 +38,7 @@
   - 基本行为包括Awake() Start() Update() FixedUpdate() LateUpdate()
   - 常用事件包括 OnGUI() OnDisable() OnEnable()
   
-  **答：**
-  
-  编写debug语句，举Awake()为例子：
+  **答：**编写debug语句，举Awake()为例子：
   
   ```c#
   private void Awake()
@@ -50,7 +48,7 @@
   ```
   运行结果如下图：
   
-  ![1567775238312](C:\Users\89481\AppData\Roaming\Typora\typora-user-images\1567775238312.png)
+  ![1567775238312](https://github.com/yaody7/unity3d-learning/blob/master/HW2/pics/1567775238312.png)
   
   > - Awake：这是在脚本最开始的时候调用的
   > - Start：开始调用Update函数之前调用
@@ -105,7 +103,7 @@
   
   **答：**
   
-  ![1567778960512](C:\Users\89481\AppData\Roaming\Typora\typora-user-images\1567778960512.png)
+  ![1567778960512](https://github.com/yaody7/unity3d-learning/blob/master/HW2/pics/1567778960512.png)
 
 
 
@@ -159,11 +157,11 @@
   
     将预设资源加入：
   
-    ![1567780973837](C:\Users\89481\AppData\Roaming\Typora\typora-user-images\1567780973837.png)
+    ![1567780973837](https://github.com/yaody7/unity3d-learning/blob/master/HW2/pics/1567780973837.png)
   
     测试结果：
   
-    ![1567781010331](C:\Users\89481\AppData\Roaming\Typora\typora-user-images\1567781010331.png)
+    ![1567781010331](https://github.com/yaody7/unity3d-learning/blob/master/HW2/pics/1567781010331.png)
 
 
 
