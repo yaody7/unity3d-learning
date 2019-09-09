@@ -38,7 +38,7 @@
   - 基本行为包括Awake() Start() Update() FixedUpdate() LateUpdate()
   - 常用事件包括 OnGUI() OnDisable() OnEnable()
   
-  **答：**编写debug语句，举Awake()为例子：
+  **答：** 编写debug语句，举Awake()为例子：
   
   ```c#
   private void Awake()
@@ -69,7 +69,7 @@
   
   ​	**Game Object：** 游戏对象是Unity中的基本对象，它展示了游戏角色，游戏属性，游戏场景。	仅靠他们自己并不能做什么，但他们可以扮演组件的容器，这些容器将实现他们的实体功能。
   
-  ​	**Transform： ** 转换组件决定了每一个场景中对象的位置、旋转以及比例。每一个游戏对象都	有一个转换组件。
+  ​	**Transform：**  转换组件决定了每一个场景中对象的位置、旋转以及比例。每一个游戏对象都	有一个转换组件。
   
   ​	**Component：** 组件是游戏中对象和行为的小构成部分。他们是每一个游戏对象的功能部分。
   
@@ -93,7 +93,7 @@
   
   **Box Collider：** 碰撞器与触发器，用来对物体之间的行为做出定义
   
-  **Mesh Renderer： ** 网格渲染器，用来设置网格的状态
+  **Mesh Renderer：** 网格渲染器，用来设置网格的状态
   
   **Defaul-Material：** 这是设置物体的颜色等信息的Component
   
@@ -291,7 +291,7 @@
 - 一个游戏对象用许多部件描述不同方面的特征。我们设计坦克（Tank）游戏对象不是继承于GameObject对象，而是 GameObject 添加一组行为部件（Component）。     
   - 这是什么设计模式？
   
-  **答： ** 装饰器模式（Decorator）。
+  **答：** 装饰器模式（Decorator）。
   
   
   
