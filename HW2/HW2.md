@@ -14,7 +14,9 @@
 
 - 下载几个游戏案例，分别总结资源、对象组织的结构（指资源的目录组织结构与游戏对象树的层次结构）
 
-**答：**在*逗分享*上下载几个unity3d的小游戏。
+**答：**
+
+在*逗分享*上下载几个unity3d的小游戏。
 
 > http://www.idoubi.net/category/unity3d/complete-project
 
@@ -36,7 +38,9 @@
   - 基本行为包括Awake() Start() Update() FixedUpdate() LateUpdate()
   - 常用事件包括 OnGUI() OnDisable() OnEnable()
   
-  **答：**编写debug语句，举Awake()为例子：
+  **答：**
+  
+  编写debug语句，举Awake()为例子：
   
   ```c#
   private void Awake()
