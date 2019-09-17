@@ -105,7 +105,7 @@
 
 **事物：**
 
-![1568709685961](C:\Users\89481\AppData\Roaming\Typora\typora-user-images\1568709685961.png)
+![1568709685961](https://github.com/yaody7/unity3d-learning/blob/master/HW3/pics/1568709685961.png)
 
 > **Devil：** 恶魔，游戏主体，当数量大于牧师时判定为游戏失败。
 >
