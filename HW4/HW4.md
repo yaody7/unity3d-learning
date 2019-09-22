@@ -10,20 +10,20 @@
 >
 > **注意：** 我使用的是2018.3.14f1的版本，如果直接在Editor里面登陆总是会闪烁登不进去，**解决方法** 是在Unity Hub先登陆，这样就可以避开这个“坑”了。
 >
-> ![1569063769779](C:\Users\89481\AppData\Roaming\Typora\typora-user-images\1569063769779.png)
+> ![1569063769779](https://github.com/yaody7/unity3d-learning/blob/master/HW4/pics/1569063769779.png)
 >
 > 2. 接着，我们在 **Asset Store** 中搜索 **Fantasy Skybox FREE** ，按照介绍导入包，我们的 **Assets** 就会变成这样
 >
-> ![1569063922111](C:\Users\89481\AppData\Roaming\Typora\typora-user-images\1569063922111.png)
+> ![1569063922111](https://github.com/yaody7/unity3d-learning/blob/master/HW4/pics/1569063922111.png)
 >
 > 3. 我们在新下载的包里面的 **Materials** 文件夹里面，选择我们需要的 **天空盒** 并将其拖到 **Main Camera** 上，这样我们的游戏场景就拥有了炫酷一点的天空了。
 > 4. 接着创建一个 **Terrain** ，开始建造我们的地形。在右侧的工具栏可以选择不同的工具调整我们的地形。
 >
-> ![1569064555935](C:\Users\89481\AppData\Roaming\Typora\typora-user-images\1569064555935.png)
+> ![1569064555935](https://github.com/yaody7/unity3d-learning/blob/master/HW4/pics/1569064555935.png)
 >
 > 5. 成果图：
 >
-> ![1569064618368](C:\Users\89481\AppData\Roaming\Typora\typora-user-images\1569064618368.png)
+> ![1569064618368](https://github.com/yaody7/unity3d-learning/blob/master/HW4/pics/1569064618368.png)
 >
 > （有点丑……
 >
@@ -55,7 +55,7 @@
 
 > 在这版游戏中，我将 **View.cs** 删掉了，取而代之的是 **action_manager.cs** ,与之配套的是 **action.cs** ——用来存储游戏对象的 **动作** 。
 >
-> ![1569066102087](C:\Users\89481\AppData\Roaming\Typora\typora-user-images\1569066102087.png)
+> ![1569066102087](https://github.com/yaody7/unity3d-learning/blob/master/HW4/pics/1569066102087.png)
 >
 > 我们按脚本文件来查看各部分究竟在做些什么。
 
@@ -157,13 +157,13 @@
 
 > - 首先，我们建立5个material，并在侧面的Albedo栏设置其外观。
 >
-> ![1569119419534](C:\Users\89481\AppData\Roaming\Typora\typora-user-images\1569119419534.png)
+> ![1569119419534](https://github.com/yaody7/unity3d-learning/blob/master/HW4/pics/1569119419534.png)
 >
-> ![1569119375327](C:\Users\89481\AppData\Roaming\Typora\typora-user-images\1569119375327.png)
+> ![1569119375327](https://github.com/yaody7/unity3d-learning/blob/master/HW4/pics/1569119375327.png)
 >
 > - 接着建立5个Sphere，并将这5个新创建的Material挂上去，效果就会像下图一样。
 >
-> ![1569119515369](C:\Users\89481\AppData\Roaming\Typora\typora-user-images\1569119515369.png)
+> ![1569119515369](https://github.com/yaody7/unity3d-learning/blob/master/HW4/pics/1569119515369.png)
 
 > 以上就是 **Albedo Color and Transparency** 的简单使用了。
 
@@ -177,11 +177,11 @@
 
 > - 首先，我们在U3D中加入 **Audio Reverb Zone** 和 **Audio Source** 。
 >
-> ![1569120769374](C:\Users\89481\AppData\Roaming\Typora\typora-user-images\1569120769374.png)
+> ![1569120769374](https://github.com/yaody7/unity3d-learning/blob/master/HW4/pics/1569120769374.png)
 >
 > - 接着，在**Audio Reverb Zone** 的右侧属性栏设置为 **Cave** 
 >
-> ![1569120855333](C:\Users\89481\AppData\Roaming\Typora\typora-user-images\1569120855333.png)
+> ![1569120855333](https://github.com/yaody7/unity3d-learning/blob/master/HW4/pics/1569120855333.png)
 >
 > - 接着，我们需要在 **Audio Source** 加入汽车行驶的声音。我们到 **Asset Store**搜索，但是由于资金有限，无法花 **5刀** 去买一个音频文件。所以就没能真正模拟声音了。
 
