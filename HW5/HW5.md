@@ -30,9 +30,9 @@
 >
 > 我选择的方式是将一个圆球外面再套上一个圆盘，这样就做成了我们小时候印象中最经典飞碟的样子。由于我们需要给飞碟添上颜色，所以还需要给飞碟添上material组件。这就是我们的飞碟预设了。
 >
-> ![1569544580456](C:\Users\89481\AppData\Roaming\Typora\typora-user-images\1569544580456.png)
+> ![1569544580456](https://github.com/yaody7/unity3d-learning/blob/master/HW5/pics/1569544580456.png)
 >
-> ![1569544620194](C:\Users\89481\AppData\Roaming\Typora\typora-user-images\1569544620194.png)
+> ![1569544620194](https://github.com/yaody7/unity3d-learning/blob/master/HW5/pics/1569544620194.png)
 
 
 
@@ -286,7 +286,7 @@
 >           }
 >       ```
 >
->        
+>    ​    
 >
 >     - **not_hit(GameObject g)**
 >
@@ -437,11 +437,11 @@
 
 **游戏效果展示**
 
-![1569555493990](C:\Users\89481\AppData\Roaming\Typora\typora-user-images\1569555493990.png)
+![1569555493990](https://github.com/yaody7/unity3d-learning/blob/master/HW5/pics/1569555493990.png)
 
 
 
-游戏视频请见：
+游戏视频请见：https://github.com/yaody7/unity3d-learning/blob/master/HW5/movie/Hit_UFO.mp4
 
 
 
@@ -453,3 +453,22 @@
 >
 > 实现自定义组件，编辑并赋予飞碟一些属性
 
+**答：**
+
+我们可以编写旋转脚本组件，参照我们之前做过的太阳系的小游戏，可以让UFO使用不同的转动轴进行转动。
+
+```c#
+public class around : MonoBehaviour
+{
+    public float speed;
+    public float yangle, zangle;
+    void Update()
+    {
+        Vector3 axis = new Vector3(0, yangle, zangle);
+        this.transform.RotateAround(new Vector3(0, 0, 0), axis, speed * Time.deltaTime);
+        this.transform.Rotate(Vector3.up * 100 * Time.deltaTime);
+    }
+}
+```
+
+通过，使用不同的速度与轴方向，就可以让我们的UFO按照不同的旋转轴旋转。将设计好的不同的组件挂载到不同的UFO上，就做好了几种飞碟的预制。
