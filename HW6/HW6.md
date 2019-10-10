@@ -220,40 +220,166 @@
 > 这里主要做的是显示所用的箭数量，以及当前的成绩。除此之外还要显示风向信息，以及设置了一个重新开始的按钮。
 >
 > ```c#
-> public interface UFO_action
+> void Start()
 > {
->  void SetSpeed(int speed);
->  void Start();
->  void SetRunning(bool b);
->  GameObject getPlayer();
->  void setPlayer(GameObject g);
->  void Update();
+>     _director = Director.getInstance();
+> }
+> 
+> private void OnGUI()
+> {
+>     GUIStyle bb = new GUIStyle();       //创建GUI的格式
+>     bb.normal.background = null;
+>     bb.normal.textColor = new Color(255, 255, 255);
+>     bb.fontSize = 25;
+> 
+> 
+>     string wind = _director.currentController.af.wind.ToString();
+>     wind = "风向: " + wind;
+>     GUI.Label(new Rect(0.3f * Screen.width, 40, 150, 35), wind, bb);
+> 
+>     string score = _director.currentController.af.score.ToString();
+>     score = "Score: " + score;
+>     GUI.Label(new Rect(0.8f * Screen.width, 170, 150, 35), score, bb);
+>     string trial = _director.currentController.af.trial.ToString();
+>     trial = "Trial: " + trial;
+>     GUI.Label(new Rect(0.8f * Screen.width, 200, 150, 35), trial, bb);
+>     if (GUI.Button(new Rect(0.75f * Screen.width, 0.7f * Screen.height, 150, 35), "重新开始"))
+>     {
+>         Application.LoadLevel(0);
+>     }
 > }
 > 
 > ```
+
+
+
+4. **设计Arrow_Factory 类**
+
+> 这个类充当了箭的工厂以及箭的动作管理器。
 >
-> 接着我们需要在两个Action类里面继承这个接口，并实现这些函数。注意到的是，这里的函数实现是一致的，代码如下：
+> 首先我们要初始化好各变量，并为箭加上 **刚体、tremble等组件**
 >
 > ```c#
-> public void SetSpeed(int speed)
+> private void Start()
 > {
->  this.speed = speed;
+>     wind = new Vector3(Random.Range(100, 300), Random.Range(100, 300), Random.Range(1, 300));
+>     director = Director.getInstance();
+>     used = new List<GameObject>();
+>     not_used = new List<GameObject>();
+>     for (int i = 0; i < 5; i++)
+>     {
+>         GameObject temp = Instantiate(Resources.Load("Prefabs/arrow", typeof(GameObject)), new Vector3(0, -20, 0), Quaternion.identity, null) as GameObject;
+>         temp.AddComponent<Rigidbody>();
+>         temp.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 100);
+>         temp.GetComponent<Rigidbody>().useGravity = false;
+>         temp.GetComponent<tremble>().enabled = false;
+>         not_used.Add(temp);
+>     }
 > }
-> public void SetRunning(bool b)
-> {
->  this.running = b;
-> }
-> public GameObject getPlayer()
-> {
->  return this.player;
-> }
-> public void setPlayer(GameObject g)
-> {
->  this.player = g;
-> }		
 > ```
 >
-> 接着我们再在 **UFOFactory类** 里面更新函数实现，将从前指定 **action** 编程使用接口来调用函数。步骤较为冗多而且简单，这里就不展示了。
+> 接着在 **FixedUpdate函数** 中，我们设置鼠标按下就射箭的功能。除此之外，在箭射出的时候，要给箭设置上风力。并且我们要检查我们的弓上还有没有箭，若没有就要添加一些箭。
+>
+> ```c#
+> private void FixedUpdate()
+> {
+>     if (director.currentController.bow != null)
+>     {
+>         for (int i = 0; i < not_used.Count-1; i++)
+>         {
+>             not_used[i].transform.position = director.currentController.bow.transform.position + new Vector3(5, 0.1f, 0);
+>         }
+>         not_used[not_used.Count - 1].transform.position = director.currentController.bow.transform.position + new Vector3(0, 0.1f, 0);
+>     }
+>     if (Input.GetMouseButtonDown(0)&&not_used.Count>0)
+>     {
+>         trial++;
+>         once = true;
+>         used.Add(not_used[not_used.Count - 1]);
+>         used[used.Count - 1].GetComponent<Rigidbody>().AddForce(wind);
+>         wind = new Vector3(Random.Range(100, 300), Random.Range(100, 300), Random.Range(1, 300));
+>         not_used.Remove(not_used[not_used.Count - 1]);
+>     }
+>     ResetArrow();
+> }
+> ```
+>
+> **ResetArrow** 这个函数就是用于给弓补充箭的。
+>
+> ```c#
+> public void ResetArrow()
+> {
+>     if (not_used.Count == 1)
+>     {
+>         GameObject temp = Instantiate(Resources.Load("Prefabs/arrow", typeof(GameObject)), new Vector3(0, -20, 0), Quaternion.identity, null) as GameObject;
+>         temp.AddComponent<Rigidbody>();
+>         temp.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 100);
+>         temp.GetComponent<Rigidbody>().useGravity = false;
+>         temp.GetComponent<tremble>().enabled = false;
+>         not_used.Add(temp);
+>     }
+> }
+> ```
+
+
+
+5. **设计触发器函数**
+
+> 我们新建了一个脚本 **boom** ，当箭射到靶子上的时候，根据触发的触发器数量加分。之后，我们需要将 **tremble脚本** 设置为 **enabled** ，使箭能颤抖0.3秒。
+>
+> ```c#
+> private void OnTriggerEnter(Collider other)
+> {
+>     if (director != null)
+>     {
+>         director.currentController.af.used[director.currentController.af.used.Count - 1].GetComponent<Rigidbody>().velocity = Vector3.zero;
+>         director.currentController.af.score += 1;
+>         if (director.currentController.af.once == true)
+>         {
+>             director.currentController.af.used[director.currentController.af.used.Count - 1].GetComponent<tremble>().enabled = true;
+>             director.currentController.af.once = false;
+>         }
+>     
+> ```
+
+
+
+6. **设计tremble类**
+
+> 这个类在 **OnEnable函数** 中获取箭靶上的初始位置，并在 **Update函数** 中，不断快速地变换位置来模拟箭地抖动。同时我们将设置一个 **left_time** 来控制抖动时间。
+>
+> ```c#
+> public class tremble : MonoBehaviour
+> {
+>     float radian = 0;
+>     float per_radian = 3f;
+>     Vector3 old_pos;                              
+>     public float left_time = 0;              
+> 
+> 
+>     public void OnEnable()
+>     {
+>         old_pos = transform.position;
+>         left_time = 0.3f;
+>     }
+> 
+>     public void Update()
+>     {
+>         left_time -= Time.deltaTime;
+>         if (left_time <= 0)
+>         {
+>             transform.position = old_pos;
+>             Destroy(this.transform.GetComponent<Rigidbody>());
+>            this.enabled = false;
+>         }
+>         if (left_time > 0)
+>         {
+>             float dy = Random.Range(-0.200f, 0.200f);
+>             transform.position = old_pos + new Vector3(0, dy, 0);
+>         }
+>     }
+> }
+> ```
 
 
 
@@ -261,10 +387,12 @@
 
 **游戏效果展示**
 
-![1570612241256](https://github.com/yaody7/unity3d-learning/blob/master/HW6/pics/1570612241256.png)
-
-![1570612306178](https://github.com/yaody7/unity3d-learning/blob/master/HW6/pics/1570612306178.png)
+![1570682534677](https://github.com/yaody7/unity3d-learning/blob/master/HW6/pics/1570682534677.png)
 
 
 
-游戏视频请见：https://github.com/yaody7/unity3d-learning/blob/master/HW6/movie/Hit_UFO.mp4
+游戏视频请见：https://github.com/yaody7/unity3d-learning/blob/master/HW6/movie/arrow.mp4
+
+
+
+**Github地址：**https://github.com/yaody7/unity3d-learning/tree/master/HW6
