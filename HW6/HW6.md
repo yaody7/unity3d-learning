@@ -88,7 +88,7 @@
 
 
 
-	3. **设计 UFO_action 接口（Adapter模式）**
+3. **设计 UFO_action 接口（Adapter模式）**
 
 > 由于我们拥有两个 **Action类** ，所以按照 **热拔插** 的设计思想，我们应该设计一个接口来包装这两个 **Action类** 
 >
