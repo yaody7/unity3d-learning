@@ -29,7 +29,7 @@
 
 > 从 **Asset Store** 下载的资源：
 >
-> ![1571405512825](C:\Users\89481\AppData\Roaming\Typora\typora-user-images\1571405512825.png)
+> ![1571405512825](https://github.com/yaody7/unity3d-learning/blob/master/HW7/pics/1571405512825.png)
 >
 > 该资源中含有 **Run**、**Die** 的动作。我们将利用其来做设计我们的脚本。
 >
@@ -133,7 +133,7 @@
 
 > 下载了和 **Player** 配套的资源：
 >
-> ![1571406138442](C:\Users\89481\AppData\Roaming\Typora\typora-user-images\1571406138442.png)
+> ![1571406138442](https://github.com/yaody7/unity3d-learning/blob/master/HW7/pics/1571406138442.png)
 >
 > 里面有 **Walk、Run、Attack** 的动画，我们可以用此设计我们的脚本。
 >
@@ -528,15 +528,19 @@
 
 **游戏效果展示**
 
-![1571406871879](C:\Users\89481\AppData\Roaming\Typora\typora-user-images\1571406871879.png)
+![1571406871879](https://github.com/yaody7/unity3d-learning/blob/master/HW7/pics/1571406871879.png)
 
 
 
-![1571406918814](C:\Users\89481\AppData\Roaming\Typora\typora-user-images\1571406918814.png)
+![1571406918814](https://github.com/yaody7/unity3d-learning/blob/master/HW7/pics/1571406918814.png)
 
 
 
-游戏视频请见：-----------
+游戏视频请见：https://github.com/yaody7/unity3d-learning/blob/master/HW7/movie/巡逻兵.mp4
+
+
+
+Github：https://github.com/yaody7/unity3d-learning/tree/master/HW7
 
 
 
