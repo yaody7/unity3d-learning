@@ -27,31 +27,31 @@
 >
 > - **选用部件：**
 >
->   ![1571733416831](C:\Users\89481\AppData\Roaming\Typora\typora-user-images\1571733416831.png)
+>   ![1571733416831](https://github.com/yaody7/unity3d-learning/blob/master/HW8/pics/1571733416831.png)
 >
 > - **总控：**
 >
->    ![1571733464840](C:\Users\89481\AppData\Roaming\Typora\typora-user-images\1571733464840.png)
+>    ![1571733464840](https://github.com/yaody7/unity3d-learning/blob/master/HW8/pics/1571733464840.png)
 >
 > - **Emission：**
 > 
->   ![1571733509840](C:\Users\89481\AppData\Roaming\Typora\typora-user-images\1571733509840.png)
+>   ![1571733509840](https://github.com/yaody7/unity3d-learning/blob/master/HW8/pics/1571733509840.png)
 >    
 >    - **Shape：**
 > 
->      ![1571733549342](C:\Users\89481\AppData\Roaming\Typora\typora-user-images\1571733549342.png)
+>      ![1571733549342](https://github.com/yaody7/unity3d-learning/blob/master/HW8/pics/1571733549342.png)
 >    
 >    - **Renderer：**
 >    
->   ![1571733589460](C:\Users\89481\AppData\Roaming\Typora\typora-user-images\1571733589460.png)
+>   ![1571733589460](https://github.com/yaody7/unity3d-learning/blob/master/HW8/pics/1571733589460.png)
 > 
 >    - **粒子：**
 >    
->   ![1571733610458](C:\Users\89481\AppData\Roaming\Typora\typora-user-images\1571733610458.png)
+>   ![1571733610458](https://github.com/yaody7/unity3d-learning/blob/master/HW8/pics/1571733610458.png)
 >    
 >    **效果展示：**
 >    
->    ![1571733666448](C:\Users\89481\AppData\Roaming\Typora\typora-user-images\1571733666448.png)
+>    ![1571733666448](https://github.com/yaody7/unity3d-learning/blob/master/HW8/pics/1571733666448.png)
 
 
 
@@ -81,39 +81,39 @@
 >
 > - **选用部件：**
 >
->   ![1571733891138](C:\Users\89481\AppData\Roaming\Typora\typora-user-images\1571733891138.png)
+>   ![1571733891138](https://github.com/yaody7/unity3d-learning/blob/master/HW8/pics/1571733891138.png)
 >
 > - **总控：**
 >
->    ![1571733907300](C:\Users\89481\AppData\Roaming\Typora\typora-user-images\1571733907300.png)
+>    ![1571733907300](https://github.com/yaody7/unity3d-learning/blob/master/HW8/pics/1571733907300.png)
 >
 > - **Emission：**
 >
->   ![1571733931836](C:\Users\89481\AppData\Roaming\Typora\typora-user-images\1571733931836.png)
+>   ![1571733931836](https://github.com/yaody7/unity3d-learning/blob/master/HW8/pics/1571733931836.png)
 >
 > - **Color over Lifetime**：
 >
->   ![1571733976255](C:\Users\89481\AppData\Roaming\Typora\typora-user-images\1571733976255.png)
+>   ![1571733976255](https://github.com/yaody7/unity3d-learning/blob/master/HW8/pics/1571733976255.png)
 >
 > - **Size over Lifetime：**
 >
->   ![1571734148601](C:\Users\89481\AppData\Roaming\Typora\typora-user-images\1571734148601.png)
+>   ![1571734148601](https://github.com/yaody7/unity3d-learning/blob/master/HW8/pics/1571734148601.png)
 >
 > - **Texture Sheet Animation：**
 >
->   ![1571734341968](C:\Users\89481\AppData\Roaming\Typora\typora-user-images\1571734341968.png)
+>   ![1571734341968](https://github.com/yaody7/unity3d-learning/blob/master/HW8/pics/1571734341968.png)
 >
 > - **Renderer**：
 >
->   ![1571734369467](C:\Users\89481\AppData\Roaming\Typora\typora-user-images\1571734369467.png)
+>   ![1571734369467](https://github.com/yaody7/unity3d-learning/blob/master/HW8/pics/1571734369467.png)
 >
 > - **粒子：**
 >
->   ![1571734383606](C:\Users\89481\AppData\Roaming\Typora\typora-user-images\1571734383606.png)
+>   ![1571734383606](https://github.com/yaody7/unity3d-learning/blob/master/HW8/pics/1571734383606.png)
 >
 > **效果展示：**
 >
-> ![1571734495999](C:\Users\89481\AppData\Roaming\Typora\typora-user-images\1571734495999.png)
+> ![1571734495999](https://github.com/yaody7/unity3d-learning/blob/master/HW8/pics/1571734495999.png)
 
 
 
