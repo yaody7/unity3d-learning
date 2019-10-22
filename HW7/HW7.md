@@ -251,115 +251,7 @@
 
 
 
-4. **设计UFOaction**
-
-> **UFOaction** 定义了UFO的飞行动作，以下是其详细介绍。
->
-> - **成员变量：**
->
->   - `public GameObject player`
->
->     记录该动作所归属的对象
->
->   - `Vector3 start`
->
->     记录UFO飞行的初始位置
->
->   - `Vector3 end`
->
->     记录UFO飞行的结束位置
->
->   - `int speed`
->
->     记录UFO飞行的速度
->
->   - `bool running`
->
->     运行态标志位
->
-> - **成员函数**
->
->   - **Start()**
->
->     设置UFO **开始位置** 以及 **结束位置** ，并调用 **setColor函数** 调整其颜色。
->
->     ```c#
->         public void Start()
->         {
->             _director = Director.getInstance();
->             start = new Vector3(Random.Range(-20f,20f), Random.Range(-20f, 20f), 0);
->             if (start.x < 10 && start.x > -10)
->                 start.x *= 4;
->             if (start.y < 10 && start.y > -10)
->                 start.y *= 4;
->             end = new Vector3(-start.x, -start.y, 0);
->             player.transform.position = start;
->             setColor();
->         }
->     ```
->
->     
->
->   - **Update()**
->
->     使用 **MoveTowards函数** 移动UFO。并且判定UFO是否移动到其结束位置，若是移动到其结束位置，证明其未被集中，则调用 **not_hit** 函数，回收UFO。
->
->     ```c#
->         public void Update()
->         {
->             if (running)
->             {
->                 player.transform.position = Vector3.MoveTowards(player.transform.position, end, speed * Time.deltaTime);
->                 if (player.transform.position == end)
->                 {
->                     this._director.currentController._UFOfactory.not_hit(this.player);   
->                 }
->             }
->         }
->     ```
->
->     
->
->   - **setColor()**
->
->     使用 **Random** 随机一个数，并根据这个数设置UFO的颜色。
->
->     ```c#
->     public void setColor()
->     {
->         int color = Random.Range(1, 4);
->         switch (color)
->         {
->             case 1:
->                 player.GetComponent<MeshRenderer>().material.color = Color.red;
->                 foreach (Transform child in player.transform)
->                 {
->                     child.gameObject.GetComponent<MeshRenderer>().material.color = Color.red;
->                 }
->                 break;
->             case 2:
->                 player.GetComponent<MeshRenderer>().material.color = Color.yellow;
->                 foreach (Transform child in player.transform)
->                 {
->                     child.gameObject.GetComponent<MeshRenderer>().material.color = Color.yellow;
->                 }
->                 break;
->             case 3:
->                 player.GetComponent<MeshRenderer>().material.color = Color.blue;
->                 foreach (Transform child in player.transform)
->                 {
->                     child.gameObject.GetComponent<MeshRenderer>().material.color = Color.blue;
->                 }
->                 break;
->             default:
->                 break;
->         }
->     }
->     ```
-
-
-
-5. **设计NPCFactory**
+4. **设计NPCFactory**
 
 > 本次 **工厂模式** 运用的不好，本来应该涉及 **NPC** 的回收利用的。但是这次偷懒，因为游戏没有设计轮次，那就顺便不设计重新开始按钮了，故 **NPCFactory** 只剩下一个制造 **NPC** 的功能了。
 >
@@ -391,12 +283,12 @@
 >        }
 >      
 >    }
->     ```
+>    ```
 >    
 
 
 
-6. **设计bonus机制**
+5. **设计bonus机制**
 
 > 我们的 **bonus** 就是一颗红球： **Player** 需要不断地拾取这颗红球获得加分。而由于在设计初期，我们红球的重新产生方式是完全随机的，导致有时候在同个区域能多次拾取红球。所以进行了改进：红球的位置会按照：1->2->3->4进行变换，而各区域里的位置是随机生成的。并且在红球上还安装了一个碰撞器，被 **Player** 碰到后就会变换位置，并且进行加分操作。
 >
@@ -451,7 +343,7 @@
 
 
 
-7. **设计My_GUI**
+6. **设计My_GUI**
 
 > 该类的主要作用就是创建 **Score** 的label。并且当 **Player** 被抓住之后显示最终得分。
 >
@@ -497,7 +389,7 @@
 
 
 
-8. **设计Singleton**
+7. **设计Singleton**
 
 > 差点忘了单例模式的模板，这是按照老师给出的资料设计的，使用到了 **FindObjectOfType** 来寻找一个类型的单例，并返回这个单例。
 >
