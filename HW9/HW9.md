@@ -86,6 +86,13 @@
 
 
 
+**预制使用方法**
+
+> - **IMGUI** 需要将使用血条的人物拖到脚本的共有变量 **t** 上。
+> - **UGUI** 将画布作为使用血条人物的子对象即可。
+
+
+
 **效果展示**
 
 https://github.com/yaody7/unity3d-learning/blob/master/HW9/效果展示.mp4

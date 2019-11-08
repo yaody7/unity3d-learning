@@ -10,5 +10,5 @@ public class LookAtCamera : MonoBehaviour
     {
         this.transform.LookAt(Camera.main.transform.position);
     }
-
+    
 }
